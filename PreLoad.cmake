@@ -1,3 +1,4 @@
+# Copyright (C) Likan Mod 2012-2013 <https://github.com/ChaosDevLikan/Genesis/>
 # Copyright (C) 2005-2012 Trinity <http://www.trinitycore.org/>
 #
 # This file is free software; as a special exception the author gives
