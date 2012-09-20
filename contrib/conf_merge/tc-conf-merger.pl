@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 
+# Copyright (C) Likan Mod 2012-2013 <https://github.com/ChaosDevLikan/Genesis/>
 # Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
 # Author: leak
 # Date: 2010-12-06
