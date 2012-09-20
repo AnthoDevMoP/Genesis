@@ -69,6 +69,3 @@ add_subdirectory(dep)
 
 # add core sources
 add_subdirectory(src)
-
-# add core sources
-add_subdirectory(data)
