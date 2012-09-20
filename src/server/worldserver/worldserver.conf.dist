@@ -89,9 +89,7 @@ LogsDir = "logy_world"
 #                     "127.0.0.1;3306;trinity;trinity;characters" - (CharacterDatabaseInfo)
 
 LoginDatabaseInfo     = "127.0.0.1;3306;root;root;trinity_auth"
-#WorldDatabaseInfo     = "127.0.0.1;3306;root;root;trinity_world"
-#WorldDatabaseInfo     = "127.0.0.1;3306;root;root;trinity"
-WorldDatabaseInfo     = "127.0.0.1;3306;root;root;sky_world"
+WorldDatabaseInfo     = "127.0.0.1;3306;root;root;trinity_world"
 CharacterDatabaseInfo = "127.0.0.1;3306;root;root;trinity_characters"
 
 #LoginDatabaseInfo     = "127.0.0.1;3306;root;ascent;auth"
