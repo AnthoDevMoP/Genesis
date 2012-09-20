@@ -1,5 +1,5 @@
 ################################################
-# Trinity Core World Server configuration file #
+# Genesis Core World Server configuration file #
 ################################################
 [worldserver]
 
@@ -71,7 +71,7 @@ DataDir = "."
 #                     Logs directory must exists, or log file creation will be disabled.
 #        Default:     "" - (Log files will be stored in the current path)
 
-LogsDir = ""
+LogsDir = "logy_world"
 
 #
 #    LoginDatabaseInfo
@@ -88,9 +88,15 @@ LogsDir = ""
 #                     "127.0.0.1;3306;trinity;trinity;world"      - (WorldDatabaseInfo)
 #                     "127.0.0.1;3306;trinity;trinity;characters" - (CharacterDatabaseInfo)
 
-LoginDatabaseInfo     = "127.0.0.1;3306;trinity;trinity;auth"
-WorldDatabaseInfo     = "127.0.0.1;3306;trinity;trinity;world"
-CharacterDatabaseInfo = "127.0.0.1;3306;trinity;trinity;characters"
+LoginDatabaseInfo     = "127.0.0.1;3306;root;root;trinity_auth"
+#WorldDatabaseInfo     = "127.0.0.1;3306;root;root;trinity_world"
+#WorldDatabaseInfo     = "127.0.0.1;3306;root;root;trinity"
+WorldDatabaseInfo     = "127.0.0.1;3306;root;root;sky_world"
+CharacterDatabaseInfo = "127.0.0.1;3306;root;root;trinity_characters"
+
+#LoginDatabaseInfo     = "127.0.0.1;3306;root;ascent;auth"
+#WorldDatabaseInfo     = "127.0.0.1;3306;root;ascent;world"
+#CharacterDatabaseInfo = "127.0.0.1;3306;root;ascent;characters"
 
 #
 #    LoginDatabase.WorkerThreads
@@ -587,7 +593,8 @@ StrictPetNames = 0
 #
 #    DBC.Locale
 #        Description: DBC language settings.
-#        Default:     0   - (English)
+#        Default:     255 - (Auto Detect)
+#                     0   - (English)
 #                     1   - (Korean)
 #                     2   - (French)
 #                     3   - (German)
@@ -597,7 +604,7 @@ StrictPetNames = 0
 #                     7   - (Spanish Mexico)
 #                     8   - (Russian)
 
-DBC.Locale = 0
+DBC.Locale = 255
 
 #
 #    DeclinedNames
@@ -611,12 +618,11 @@ DeclinedNames = 0
 #    Expansion
 #        Description: Allow server to use content from expansions. Checks for expansion-related
 #                     map files, client compatibility and class/race character creation.
-#        Default:     3 - (Expansion 3)
-#                     2 - (Expansion 2)
+#        Default:     2 - (Expansion 2)
 #                     1 - (Expansion 1)
 #                     0 - (Disabled, Ignore and disable expansion content (maps, races, classes)
 
-Expansion = 3
+Expansion = 2
 
 #
 #    MinPlayerName
@@ -743,16 +749,16 @@ SkipCinematics = 0
 #        Description: Maximum level that can be reached by players.
 #        Important:   Levels beyond 100 are not recommended at all.
 #        Range:       1-255
-#        Default:     85
+#        Default:     80
 
-MaxPlayerLevel = 85
+MaxPlayerLevel = 80
 
 #
 #    MinDualSpecLevel
 #        Description: Level requirement for Dual Talent Specialization
-#        Default:     30
+#        Default:     40
 
-MinDualSpecLevel = 30
+MinDualSpecLevel = 40
 
 #
 #    StartPlayerLevel
@@ -810,9 +816,9 @@ StartArenaPoints = 0
 #    RecruitAFriend.MaxLevel
 #        Description: Highest level up to which a character can benefit from the Recruit-A-Friend
 #                     experience multiplier.
-#        Default:     80
+#        Default:     60
 
-RecruitAFriend.MaxLevel = 80
+RecruitAFriend.MaxLevel = 60
 
 #
 #    RecruitAFriend.MaxDifference
@@ -861,6 +867,15 @@ AllFlightPaths = 0
 #                     1 - (Enabled)
 
 InstantFlightPaths = 0
+
+#
+#    AlwaysMaxSkillForLevel
+#        Description: Players will automatically gain max skill level when logging in or leveling
+#                     up.
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
+
+AlwaysMaxSkillForLevel = 0
 
 #
 #    ActivateWeather
@@ -987,10 +1002,10 @@ MaxPrimaryTradeSkill = 2
 #
 #    MinPetitionSigns
 #        Description: Number of required signatures on charters to create a guild.
-#        Range:       0-4
-#        Default:     4
+#        Range:       0-9
+#        Default:     9
 
-MinPetitionSigns = 4
+MinPetitionSigns = 9
 
 #
 #    MaxGroupXPDistance
@@ -1199,14 +1214,6 @@ Warden.BanDuration = 86400
 #                     0 - (Disabled)
 
 AllowTwoSide.Accounts = 1
-
-#
-#    AllowTwoSide.Interaction.Calendar
-#        Description: Allow calendar invites between factions.
-#        Default:     0 - (Disabled)
-#                     1 - (Enabled)
-
-AllowTwoSide.Interaction.Calendar = 0
 
 #
 #    AllowTwoSide.Interaction.Chat
@@ -1951,13 +1958,19 @@ Rate.InstanceResetTime = 1
 
 #
 #    SkillGain.Crafting
+#    SkillGain.Defense
 #    SkillGain.Gathering
+#    SkillGain.Weapon
 #        Description: Crafting/defense/gathering/weapon skills gain rate.
 #        Default:     1 - (SkillGain.Crafting)
+#                     1 - (SkillGain.Defense)
 #                     1 - (SkillGain.Gathering)
+#                     1 - (SkillGain.Weapon)
 
 SkillGain.Crafting  = 1
+SkillGain.Defense   = 1
 SkillGain.Gathering = 1
+SkillGain.Weapon    = 1
 
 #
 #    SkillChance.Orange
@@ -2696,18 +2709,18 @@ PlayerDump.DisallowOverwrite = 1
 #                          w - (Overwrite)
 #
 
-Appender.Console=1,3,0
+Appender.Console=1,1,0,13 1 3 14 3 1,w
 Appender.Server=2,2,0,Server.log,w
-Appender.GM=2,2,0,GM.log
-Appender.DBErrors=2,2,0,DBErrors.log
+Appender.GM=2,2,0,GM.log,w
+Appender.DBErrors=2,1,0,DBErrors.log,w
 Appender.Char=2,2,0,Char.log,w
-Appender.RA=2,2,0,RA.log
+Appender.RA=2,2,0,RA.log,w
 Appender.Warden=2,4,0,Warden.log
-Appender.Chat=2,2,0,Chat.log
-Appender.CharDump=2,2,0,%s.log
-Appender.Arenas=2,2,0,Arena.log
-Appender.SQLDev=2,2,0,SQLDev.log
-Appender.SQLDriver=2,2,0,SQLDriver.log
+Appender.Chat=2,2,0,Chat.log,w
+Appender.CharDump=2,2,0,%s.log,w
+Appender.Arenas=2,2,0,Arena.log,w
+Appender.SQLDev=2,2,0,SQLDev.log,w
+Appender.SQLDriver=2,2,0,SQLDriver.log,w
 
 #    Appenders
 #        Description: List of Appenders to read from config
@@ -2803,68 +2816,6 @@ Logger.Opcodes=41,6,Console Server
 #        Default:     "Root Chat DBErrors GM RA Warden Character Load"
 
 Loggers=Root Chat DBErrors GM RA Warden Character Load WorldServer Opcodes
-
-#
-###################################################################################################
-
-###################################################################################################
-#
-#  GUILD LEVELING SETTINGS
-#
-#    Guild.LevelingEnabled
-#        Description: Controls whether guild can gain levels
-#        Default:     1
-#
-
-Guild.LevelingEnabled = 1
-
-#
-#    Guild.SaveInterval
-#        Description: Time (in minutes) between guild experience saves
-#        Default:     15
-#
-
-Guild.SaveInterval = 15
-
-#
-#    Guild.MaxLevel
-#        Description: Defines max level a guild can reach
-#        Default:     25
-#
-
-Guild.MaxLevel = 25
-
-#
-#    Guild.UndeletableLevel
-#        Description: Guild reaching this level (and higher) cannot be disbanded anymore
-#        Default:     4
-#
-
-Guild.UndeletableLevel = 4
-
-#
-#    Guild.XPModifier
-#        Description: Multiplier for guild experience gained from quests
-#        Default:     0.25
-#
-
-Guild.XPModifier = 0.25
-
-#
-#    Guild.DailyXPCap
-#        Description: Maximum experience points a guild can earn each day
-#        Default:     7807500
-#
-
-Guild.DailyXPCap = 7807500
-
-#
-#    Guild.WeeklyReputationCap
-#        Description: Maximum guild reputation a player can earn every week
-#        Default:     4375
-#
-
-Guild.WeeklyReputationCap = 4375
 
 #
 ###################################################################################################

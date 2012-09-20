@@ -1,5 +1,5 @@
 ###############################################
-# Trinity Core Auth Server configuration file #
+# Genesis Core Auth Server configuration file #
 ###############################################
 [authserver]
 
@@ -37,7 +37,7 @@
 #                     Logs directory must exists, or log file creation will be disabled.
 #        Default:     "" - (Log files will be stored in the current path)
 
-LogsDir = ""
+LogsDir = "logy_auth"
 
 #
 #    MaxPingTime
@@ -134,7 +134,7 @@ WrongPass.BanType = 0
 #                                                                           Unix/Linux)
 #        Default:     "127.0.0.1;3306;trinity;trinity;auth"
 
-LoginDatabaseInfo = "127.0.0.1;3306;trinity;trinity;auth"
+LoginDatabaseInfo = "127.0.0.1;3306;root;root;trinity_auth"
 
 #
 #    LoginDatabase.WorkerThreads
