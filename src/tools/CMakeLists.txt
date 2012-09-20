@@ -10,5 +10,5 @@
 
 add_subdirectory(extractor_406)
 add_subdirectory(extractor_434)
-add_subdirectory(build)
+add_subdirectory(data)
 
