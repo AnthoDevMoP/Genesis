@@ -1245,12 +1245,190 @@ void AddBattlegroundScripts()
 #ifdef SCRIPTS
 /* This is where custom scripts' loading functions should be declared. */
 
+//Boss/ ---------------------
+//  void AddSC_boss_deathwing();
+//  void AddSC_boss_firelord();
+
+//buffer_doktor/ ---------------------
+  void AddSC_npc_buffer_doktor();
+
+//currencies/ ---------------------
+  void AddSC_npc_currencies_archaeology();
+  void AddSC_npc_currencies_cata();
+  void AddSC_npc_currencies_dar();
+  void AddSC_npc_currencies_miscel();
+  void AddSC_npc_currencies_pvp();
+
+//genesis_city/ ---------------------
+  void AddSC_npc_genesis_city();
+  void AddSC_city_cop_vygum();
+  void AddSC_npc_event();
+  //void AddSC_npc_potkan();
+
+//hybrid/ ---------------------
+  void AddSC_npc_hybrid();
+
+//info/ ---------------------
+  void AddSC_npc_info();
+
+//mody/ ---------------------
+//  void AddSC_GoldOnKill();
+//  void AddSC_GoldOnKill();
+//  void AddSC_resetduel();
+//  void AddSC_System_Censure();
+//  void AddSC_System_Xpforpvp();
+
+//mont_pucovna/ ---------------------
+//  void AddSC_npc_mont_pucovna();
+
+//morph/ ---------------------
+  void AddSC_npc_morph();
+
+//nakup_lvl_za_goldy/ ---------------------
+  void AddSC_npc_nakup_lvl_za_goldy();
+
+//profese/ ---------------------
+  void AddSC_npc_skynning_trener();
+  void AddSC_npc_minig_trener();
+  void AddSC_npc_herbalism_trener();
+
+//reputace/ ---------------------
+  void AddSC_npc_reputation();
+
+//shop/ ---------------------
+  void AddSC_npc_potkan();
+
+//taxiky/ ---------------------
+  void AddSC_npc_desence_taxi();
+  void AddSC_npc_vertexpinakle_taxi();
+  void AddSC_npc_dkk_taxi();
+  void AddSC_npc_shoop_taxi();
+
+//test/ ---------------------
+
+//tools/ ---------------------
+  void AddSC_npc_tools();
+
+//trenery/ ---------------------
+  void AddSC_npc_death_knight_trainer();
+  void AddSC_npc_druid_trainer();
+  void AddSC_npc_hunter_trainer();
+  void AddSC_npc_mage_trainer();
+  void AddSC_npc_mountt_trener();
+  void AddSC_npc_mountworgen_trener();
+  void AddSC_npc_paladin_trainer();
+  void AddSC_npc_priest_trainer();
+  void AddSC_npc_roguee_trainer();
+  void AddSC_npc_shaman_trainer();
+  void AddSC_npc_warlock_trainer();
+  void AddSC_npc_warrior_trainer();
+
+//vadne/ ---------------------
+//  void AddSC_npc_petmaster();
+
+//vendors/ ---------------------
+  void AddSC_npc_vanishing_powder();
+
+//zvuky/ ---------------------
+  void AddSC_npc_say();
+  void AddSC_npc_zvuky();
+
+//poznamky ---------------------
 #endif
 
-void AddCustomScripts()
+void AddCustomScripts ()
 {
 #ifdef SCRIPTS
     /* This is where custom scripts should be added. */
 
+//Boss/ ---------------------
+//      AddSC_boss_deathwing();
+//      AddSC_boss_firelord();
+
+//buffer_doktor/ ---------------------
+      AddSC_npc_buffer_doktor();
+
+//currencies/ ---------------------
+      AddSC_npc_currencies_archaeology();
+      AddSC_npc_currencies_cata();
+      AddSC_npc_currencies_dar();
+      AddSC_npc_currencies_miscel();
+      AddSC_npc_currencies_pvp();
+
+//genesis_city/ ---------------------
+      AddSC_npc_genesis_city();
+      AddSC_city_cop_vygum();
+      AddSC_npc_event();
+      //AddSC_npc_potkan();
+
+//hybrid/ ---------------------
+      AddSC_npc_hybrid();
+
+//info/ ---------------------
+      AddSC_npc_info();
+
+//mody/ ---------------------
+//      AddSC_GoldOnKill();
+//      AddSC_GoldOnKill();
+//      AddSC_resetduel();
+//      AddSC_System_Censure();
+//      AddSC_System_Xpforpvp();
+
+//mont_pucovna/ ---------------------
+//      AddSC_npc_mont_pucovna();
+
+//morph/ ---------------------
+      AddSC_npc_morph();
+
+//nakup_lvl_za_goldy/ ---------------------
+      AddSC_npc_nakup_lvl_za_goldy();
+
+//profese/ ---------------------
+      AddSC_npc_skynning_trener();
+      AddSC_npc_minig_trener();
+      AddSC_npc_herbalism_trener();
+
+//reputace/ ---------------------
+      AddSC_npc_reputation();
+
+//shop/ ---------------------
+      AddSC_npc_potkan();
+
+//taxiky/ ---------------------
+      AddSC_npc_desence_taxi();
+      AddSC_npc_vertexpinakle_taxi();
+      AddSC_npc_dkk_taxi();
+      AddSC_npc_shoop_taxi();
+
+//test/ ---------------------
+
+//tools/ ---------------------
+      AddSC_npc_tools();
+
+//trenery/ ---------------------
+      AddSC_npc_death_knight_trainer();
+      AddSC_npc_druid_trainer();
+      AddSC_npc_hunter_trainer();
+      AddSC_npc_mage_trainer();
+      AddSC_npc_mountt_trener();
+      AddSC_npc_mountworgen_trener();
+      AddSC_npc_paladin_trainer();
+      AddSC_npc_priest_trainer();
+      AddSC_npc_roguee_trainer();
+      AddSC_npc_shaman_trainer();
+      AddSC_npc_warlock_trainer();
+      AddSC_npc_warrior_trainer();
+
+//vadne/ ---------------------
+//      AddSC_npc_petmaster();
+
+//vendors/ ---------------------
+      AddSC_npc_vanishing_powder();
+
+//zvuky/ ---------------------
+      AddSC_npc_say();
+      AddSC_npc_zvuky();
+
+//poznamky ---------------------
 #endif
 }
