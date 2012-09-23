@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) Likan Mod 2012-2013 <https://github.com/ChaosDevLikan/Genesis/>
  * Copyright (C) 2009 Gameshoot.eu <http://www.Gameshoot.eu/>
  *
  * World of Warcraft: Cataclysm 

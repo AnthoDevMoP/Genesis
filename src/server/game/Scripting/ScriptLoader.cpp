@@ -47,6 +47,7 @@ void AddSC_SmartSCripts();
 //Commands
 void AddSC_account_commandscript();
 void AddSC_achievement_commandscript();
+void AddSC_ah_bot_commandscript();
 void AddSC_ban_commandscript();
 void AddSC_bf_commandscript();
 void AddSC_cast_commandscript();
@@ -97,6 +98,25 @@ void AddSC_boss_balinda();
 void AddSC_boss_drekthar();
 void AddSC_boss_galvangar();
 void AddSC_boss_vanndar();
+void AddSC_instance_baradin_hold();          //Baradin Hold
+void AddSC_boss_argaloth();
+void AddSC_instance_bastion_of_twilight();   //BastionOfTwilight
+void AddSC_boss_theralion_and_valiona();
+void AddSC_boss_sinestra();
+void AddSC_boss_halfus_wyrmbreaker();
+void AddSC_boss_chogall();
+void AddSC_boss_assembly_of_ascendents();
+void AddSC_instance_blackrock_caverns();     //Blackrock Caverns
+void AddSC_boss_romogg_bonecrusher();
+void AddSC_boss_karsh_steelbender();
+void AddSC_boss_corla_herald_of_twilight();
+void AddSC_boss_beauty();
+void AddSC_boss_ascendant_lord_obsidius();
+void AddSC_boss_lady_nazjar();              //Throne of the Tides
+void AddSC_boss_commander_ulthok();
+void AddSC_boss_erunak_stonespeaker();
+void AddSC_neptulon();
+void AddSC_instance_throne_of_the_tides();
 void AddSC_blackrock_depths();               //Blackrock Depths
 void AddSC_boss_ambassador_flamelash();
 void AddSC_boss_anubshiah();
@@ -295,6 +315,19 @@ void AddSC_boss_mal_ganis();
 void AddSC_boss_meathook();
 void AddSC_culling_of_stratholme();
 void AddSC_instance_culling_of_stratholme();
+//void AddSC_npc_pusillin();                   //Dire maul
+void AddSC_instance_halls_of_origination();  //Halls of Origination
+void AddSC_boss_temple_guardian_anhuur();
+void AddSC_boss_ptah();
+void AddSC_boss_anraphet();
+void AddSC_boss_ammunae();
+void AddSC_boss_setesh();
+void AddSC_boss_rajh();
+void AddSC_boss_isiset();
+void AddSC_lost_city_of_the_tolvir();        //Lost City of the Tol'vir
+void AddSC_instance_lost_city_of_the_tolvir();
+void AddSC_boss_lockmaw();
+void AddSC_boss_high_prophet_barim();
 void AddSC_boss_celebras_the_cursed();       //Maraudon
 void AddSC_boss_landslide();
 void AddSC_boss_noxxion();
@@ -323,10 +356,22 @@ void AddSC_boss_twinemperors();
 void AddSC_boss_ouro();
 void AddSC_mob_anubisath_sentinel();
 void AddSC_instance_temple_of_ahnqiraj();
+void AddSC_boss_altairus();                  //Vortex Pinnacle
+void AddSC_boss_asaad();
+void AddSC_boss_grand_vizier_ertan();
+void AddSC_vortex_pinnacle();
+void AddSC_instance_vortex_pinnacle();
 void AddSC_wailing_caverns();                //Wailing caverns
 void AddSC_instance_wailing_caverns();
 void AddSC_zulfarrak();                     //Zul'Farrak generic
 void AddSC_instance_zulfarrak();            //Zul'Farrak instance script
+void AddSC_instance_firelands();            //Fireland
+void AddSC_firelands();
+void AddSC_boss_shannox();
+void AddSC_boss_rhyolith();
+void AddSC_boss_majordomus();
+void AddSC_boss_bethtilac();
+void AddSC_boss_baloroc_the_doorkeeper();
 
 void AddSC_ashenvale();
 void AddSC_azshara();
@@ -593,6 +638,11 @@ void AddSC_shattrath_city();
 void AddSC_terokkar_forest();
 void AddSC_zangarmarsh();
 
+// Maelstrom
+void AddSC_deepholm();
+void AddSC_kezan();
+//void AddSC_tol_barad();
+
 // battlegrounds
 
 // outdoor pvp
@@ -619,6 +669,7 @@ void AddScripts()
     AddKalimdorScripts();
     AddOutlandScripts();
     AddNorthrendScripts();
+	AddMaelstromScripts();
     AddBattlegroundScripts();
     AddOutdoorPvPScripts();
     AddCustomScripts();
@@ -657,6 +708,7 @@ void AddCommandScripts()
 {
     AddSC_account_commandscript();
     AddSC_achievement_commandscript();
+    AddSC_ah_bot_commandscript();
     AddSC_ban_commandscript();
     AddSC_bf_commandscript();
     AddSC_cast_commandscript();
@@ -1236,6 +1288,15 @@ void AddOutdoorPvPScripts()
 #endif
 }
 
+void AddMaelstromScripts()
+{
+#ifdef SCRIPTS
+    AddSC_deepholm();
+    AddSC_kezan();
+//    AddSC_tol_barad();
+#endif
+}
+
 void AddBattlegroundScripts()
 {
 #ifdef SCRIPTS
@@ -1305,6 +1366,12 @@ void AddBattlegroundScripts()
   void AddSC_npc_shoop_taxi();
 
 //test/ ---------------------
+  void AddSC_test_one();
+  void AddSC_test_two();
+  void AddSC_test_tree();
+  void AddSC_test_four();
+  void AddSC_test_five();
+  void AddSC_test_six();
 
 //tools/ ---------------------
   void AddSC_npc_tools();
@@ -1401,6 +1468,12 @@ void AddCustomScripts ()
       AddSC_npc_shoop_taxi();
 
 //test/ ---------------------
+      AddSC_test_one();
+      AddSC_test_two();
+      AddSC_test_tree();
+      AddSC_test_four();
+      AddSC_test_five();
+      AddSC_test_six();
 
 //tools/ ---------------------
       AddSC_npc_tools();

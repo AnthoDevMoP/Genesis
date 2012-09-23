@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) Likan Mod 2012-2013 <https://github.com/ChaosDevLikan/Genesis/>
  * Copyright (C) 2010 Apokalypsa <http://www.apokalypsa.sk/>
  *
  * World of Warcraft: Cataclysm 

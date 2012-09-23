@@ -1,3 +1,6 @@
+ /*
+ * Copyright (C) Likan Mod 2012-2013 <https://github.com/ChaosDevLikan/Genesis/>
+ */
 /*###
 # generic defines
 ###*/

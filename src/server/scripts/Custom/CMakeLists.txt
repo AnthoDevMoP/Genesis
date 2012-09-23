@@ -71,6 +71,12 @@ set(scripts_STAT_SRCS
   Custom/taxiky/npc_shoop_taxi.cpp
 
 #test/ ---------------------
+  Custom/test/test_one.cpp
+  Custom/test/test_two.cpp;
+  Custom/test/test_tree.cpp
+  Custom/test/test_four.cpp
+  Custom/test/test_five.cpp
+  Custom/test/test_six.cpp
 
 #tools/ ---------------------
   Custom/tools/npc_tools.cpp

@@ -366,9 +366,11 @@ enum Rates
     RATE_DROP_ITEM_REFERENCED_AMOUNT,
     RATE_DROP_MONEY,
     RATE_XP_KILL,
+    RATE_XP_KILL_PREMIUM,
     RATE_XP_QUEST,
-    RATE_XP_GUILD_MODIFIER,
+    RATE_XP_QUEST_PREMIUM,
     RATE_XP_EXPLORE,
+    RATE_XP_EXPLORE_PREMIUM,
     RATE_REPAIRCOST,
     RATE_REPUTATION_GAIN,
     RATE_REPUTATION_LOWLEVEL_KILL,
@@ -429,7 +431,7 @@ enum BillingPlanFlags
 
 /// Type of server, this is values from second column of Cfg_Configs.dbc
 enum RealmType
-{
+{                                 // custom, free for all pvp mode like arena PvP in all zones except rest activated places and sanctuaries
     REALM_TYPE_NORMAL       = 0,
     REALM_TYPE_PVP          = 1,
     REALM_TYPE_NORMAL2      = 4,

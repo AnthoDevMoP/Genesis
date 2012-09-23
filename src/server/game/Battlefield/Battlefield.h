@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) Likan Mod 2012-2013 <https://github.com/ChaosDevLikan/Genesis/>
  * Copyright (C) 2008-2010 TrinityCore <http://www.trinitycore.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
@@ -36,6 +37,7 @@ enum BattlefieldTypes
 enum BattlefieldIDs
 {
     BATTLEFIELD_BATTLEID_WG                      = 1        // Wintergrasp battle
+	//BATTLEFIELD_BATTLEID_TB                      = 21       //Tol Barad battle
 };
 
 enum BattlefieldObjectiveStates

@@ -1,3 +1,15 @@
+/*
+ * Copyright (C) Likan Mod 2012-2013 <https://github.com/ChaosDevLikan/Genesis/>
+ * Copyright (C) 2009 Gameshoot.eu <http://www.Gameshoot.eu/>
+ *
+ * World of Warcraft: Cataclysm 
+ * You can edit but you can not delete this copyright.
+ * SkyFire Emulator - SkyFire Database  
+ * Cataclysm Hybrid
+ *
+ * By Likan - Head Admin end Developer of Gameshoot.eu Server
+ */
+
 #include "ScriptPCH.h"
 
 class Reset_OnDuelEnd : public PlayerScript

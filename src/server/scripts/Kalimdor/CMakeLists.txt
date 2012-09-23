@@ -1,3 +1,4 @@
+# Copyright (C) Likan Mod 2012-2013 <https://github.com/ChaosDevLikan/Genesis/>
 # Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
 #
 # This file is free software; as a special exception the author gives
@@ -110,6 +111,39 @@ set(scripts_STAT_SRCS
   Kalimdor/OnyxiasLair/boss_onyxia.cpp
   Kalimdor/OnyxiasLair/onyxias_lair.h
   Kalimdor/OnyxiasLair/instance_onyxias_lair.cpp
+
+  #Kalimdor/DireMaul/npc_pusillin.cpp  
+
+  Kalimdor/LostCityOfTheTolvir/instance_lost_city_of_the_tolvir.cpp
+  Kalimdor/LostCityOfTheTolvir/lost_city_of_the_tolvir.cpp
+  Kalimdor/LostCityOfTheTolvir/lost_city_of_the_tolvir.h
+  Kalimdor/LostCityOfTheTolvir/boss_lockmaw.cpp
+  Kalimdor/LostCityOfTheTolvir/boss_high_prophet_barim.cpp  
+  
+  Kalimdor/HallsOfOrigination/instance_halls_of_origination.cpp
+  Kalimdor/HallsOfOrigination/halls_of_origination.h
+  Kalimdor/HallsOfOrigination/boss_temple_guardian_anhuur.cpp
+  Kalimdor/HallsOfOrigination/boss_earthrager_ptah.cpp
+  Kalimdor/HallsOfOrigination/boss_anraphet.cpp 
+  Kalimdor/HallsOfOrigination/boss_ammunae.cpp
+  Kalimdor/HallsOfOrigination/boss_setesh.cpp
+  Kalimdor/HallsOfOrigination/boss_rajh.cpp
+  Kalimdor/HallsOfOrigination/boss_isiset.cpp
+
+  Kalimdor/VortexPinnacle/boss_altairus.cpp
+  Kalimdor/VortexPinnacle/boss_asaad.cpp
+  Kalimdor/VortexPinnacle/boss_grand_vizier_ertan.cpp
+  Kalimdor/VortexPinnacle/instance_vortex_pinnacle.cpp
+  Kalimdor/VortexPinnacle/vortex_pinnacle.cpp
+  Kalimdor/VortexPinnacle/vortex_pinnacle.h 
+
+  Kalimdor/Firelands/instance_firelands.cpp 
+  Kalimdor/Firelands/firelands.h 
+  Kalimdor/Firelands/boss_shannox.cpp
+  Kalimdor/Firelands/boss_rhyolith.cpp
+  Kalimdor/Firelands/boss_majordomus.cpp
+  Kalimdor/Firelands/boss_bethtilac.cpp
+  Kalimdor/Firelands/boss_baloroc_the_doorkeeper.cpp
 )
 
 message("  -> Prepared: Kalimdor")

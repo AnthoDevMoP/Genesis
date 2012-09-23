@@ -24,6 +24,7 @@
 #include "Common.h"
 #include "DatabaseEnv.h"
 #include "DBCStructure.h"
+#include "AuctionHouseBot.h"
 
 class Item;
 class Player;
