@@ -2158,6 +2158,9 @@ bool Player::TeleportTo(uint32 mapid, float x, float y, float z, float orientati
     else
         sLog->outDebug(LOG_FILTER_MAPS, "Player %s is being teleported to map %u", GetName(), mapid);
 
+    if (m_vehicle)
+        ExitVehicle();
+
     // reset movement flags at teleport, because player will continue move with these flags after teleport
     SetUnitMovementFlags(0);
     DisableSpline();
@@ -5521,7 +5524,7 @@ void Player::RepopAtGraveyard()
     AreaTableEntry const* zone = GetAreaEntryByAreaID(GetAreaId());
 
     // Such zones are considered unreachable as a ghost and the player must be automatically revived
-    if ((!isAlive() && zone && zone->flags & AREA_FLAG_NEED_FLY) || GetTransport() || GetPositionZ() < -500.0f)
+    if ((!isAlive() && zone && zone->flags & AREA_FLAG_NEED_FLY) || GetTransport() || GetPositionZ() < zone->MaxDepth)
     {
         ResurrectPlayer(0.5f);
         SpawnCorpseBones();
@@ -5563,7 +5566,7 @@ void Player::RepopAtGraveyard()
             GetSession()->SendPacket(&data);
         }
     }
-    else if (GetPositionZ() < -500.0f)
+    else if (GetPositionZ() < zone->MaxDepth)
         TeleportTo(m_homebindMapId, m_homebindX, m_homebindY, m_homebindZ, GetOrientation());
 }
 
@@ -6830,8 +6833,7 @@ void Player::CheckAreaExploreAndOutdoor()
                 {
                     XP = uint32(sObjectMgr->GetBaseXP(areaEntry->area_level)*sWorld->getRate(RATE_XP_EXPLORE));
                 }
-                if(GetSession()->IsPremium())
-                XP *= sWorld->getRate(RATE_XP_EXPLORE_PREMIUM);
+
                 GiveXP(XP, NULL);
                 SendExplorationExperience(area, XP);
             }
@@ -7357,13 +7359,16 @@ bool Player::HasCurrency(uint32 id, uint32 count) const
     return itr != _currencyStorage.end() && itr->second.totalCount >= count;
 }
 
-void Player::ModifyCurrency(uint32 id, int32 count, bool printLog/* = true*/)
+void Player::ModifyCurrency(uint32 id, int32 count, bool printLog/* = true*/, bool ignoreMultipliers/* = false*/)
 {
     if (!count)
         return;
 
     CurrencyTypesEntry const* currency = sCurrencyTypesStore.LookupEntry(id);
     ASSERT(currency);
+
+    if (!ignoreMultipliers)
+        count *= GetTotalAuraMultiplierByMiscValue(SPELL_AURA_MOD_CURRENCY_GAIN, id);
 
     int32 precision = currency->Flags & CURRENCY_FLAG_HIGH_PRECISION ? 100 : 1;
     uint32 oldTotalCount = 0;
@@ -7655,7 +7660,7 @@ void Player::UpdateZone(uint32 newZone, uint32 newArea)
     if (!zone)
         return;
 
-    if (sWorld->getBoolConfig(CONFIG_WEATHER))
+    if (sWorld->getBoolConfig(CONFIG_WEATHER) && !HasAuraType(SPELL_AURA_FORCE_WEATHER))
     {
         if (Weather* weather = WeatherMgr::FindWeather(zone->ID))
             weather->SendWeatherUpdateToPlayer(this);
@@ -15045,16 +15050,13 @@ void Player::RewardQuest(Quest const* quest, uint32 reward, Object* questGiver, 
         AddPctN(XP, (*i)->GetAmount());
 
     int32 moneyRew = 0;
-    if (GetSession()->IsPremium())
-        XP *= sWorld->getRate(RATE_XP_QUEST_PREMIUM);
-
     if (getLevel() < sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL))
         GiveXP(XP, NULL);
     else
         moneyRew = int32(quest->GetRewMoneyMaxLevel() * sWorld->getRate(RATE_DROP_MONEY));
 
     if (Guild* guild = sGuildMgr->GetGuildById(GetGuildId()))
-    //    guild->GiveXP(uint32(quest->XPValue(this) * sWorld->getRate(RATE_XP_QUEST) * sWorld->getRate(RATE_XP_GUILD_MODIFIER)), this);
+        guild->GiveXP(uint32(quest->XPValue(this) * sWorld->getRate(RATE_XP_QUEST) * sWorld->getRate(RATE_XP_GUILD_MODIFIER)), this);
 
     // Give player extra money if GetRewOrReqMoney > 0 and get ReqMoney if negative
     if (quest->GetRewOrReqMoney())
@@ -21122,7 +21124,7 @@ inline bool Player::_StoreOrEquipNewItem(uint32 vendorslot, uint32 item, uint8 c
         for (int i = 0; i < MAX_ITEM_EXT_COST_CURRENCIES; ++i)
         {
             if (iece->RequiredCurrency[i])
-                ModifyCurrency(iece->RequiredCurrency[i], -int32(iece->RequiredCurrencyCount[i]));
+                ModifyCurrency(iece->RequiredCurrency[i], -int32(iece->RequiredCurrencyCount[i]), true, true);
         }
     }
 
@@ -21256,7 +21258,7 @@ bool Player::BuyCurrencyFromVendorSlot(uint64 vendorGuid, uint32 vendorSlot, uin
         return false;
     }
 
-    ModifyCurrency(currency, crItem->maxcount);
+    ModifyCurrency(currency, crItem->maxcount, true, true);
 
     return true;
 }

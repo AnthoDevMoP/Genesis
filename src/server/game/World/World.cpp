@@ -1204,7 +1204,7 @@ void World::LoadConfigSettings(bool reload)
     m_int_configs[CONFIG_GUILD_SAVE_INTERVAL] = ConfigMgr::GetIntDefault("Guild.SaveInterval", 15);
     m_int_configs[CONFIG_GUILD_MAX_LEVEL] = ConfigMgr::GetIntDefault("Guild.MaxLevel", 25);
     m_int_configs[CONFIG_GUILD_UNDELETABLE_LEVEL] = ConfigMgr::GetIntDefault("Guild.UndeletableLevel", 4);
-//    rate_values[RATE_XP_GUILD_MODIFIER] = ConfigMgr::GetFloatDefault("Guild.XPModifier", 0.25f);
+    rate_values[RATE_XP_GUILD_MODIFIER] = ConfigMgr::GetFloatDefault("Guild.XPModifier", 0.25f);
     m_int_configs[CONFIG_GUILD_DAILY_XP_CAP] = ConfigMgr::GetIntDefault("Guild.DailyXPCap", 7807500);
     m_int_configs[CONFIG_GUILD_WEEKLY_REP_CAP] = ConfigMgr::GetIntDefault("Guild.WeeklyReputationCap", 4375);
 
