@@ -40,7 +40,7 @@ const char CharTitlesEntryfmt[]="nxsxix";
 const char ChatChannelsEntryfmt[]="nixsx";
 
 const char ChrClassesEntryfmt[]="nixsxxxixiiiii";
-const char ChrRacesEntryfmt[]="nxixiixixxxxixsxxxxxixxx";
+const char ChrRacesEntryfmt[]="nxixiixixxxxixsxxxxxixxxxxxxxxxxxxxx";
 const char ChrClassesXPowerTypesfmt[]="nii";
 
 const char CinematicSequencesEntryfmt[]="nxxxxxxxxx";
